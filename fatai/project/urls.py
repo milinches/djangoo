@@ -5,4 +5,5 @@ app_name = 'project'
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name="list"),
+    path('track/', views.)
 ]
