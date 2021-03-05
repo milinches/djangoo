@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 STATUS = (
     (0, "NIL"),
     (1, "Delivered"),
-    (3, "On the way"),
+    (2, "On the way"),
 )
 
 class Track(models.Model):

@@ -8,15 +8,15 @@ class HomePage(generic.TemplateView):
 
 class ListPageN(generic.ListView):
     template_name = 'project/list_view.html'
-    queryset = Track.objects.filter(status=1).order_by('-time')
+    queryset = Track.objects.filter(status=0).order_by('-time')
     context_object_name = 'track_page_n'
 
 class ListPageD(generic.ListView):
-    template_name = 'project/list_view.html'
-    queryset = Track.objects.filter(status=2).order_by('-time')
+    template_name = 'project/list_viewd.html'
+    queryset = Track.objects.filter(status=1).order_by('-time')
     context_object_name = 'track_page_d'
 
-class ListPage0(generic.ListView):
-    template_name = 'project/list_view.html'
-    queryset = Track.objects.filter(status=3).order_by('-time')
+class ListPageO(generic.ListView):
+    template_name = 'project/list_viewo.html'
+    queryset = Track.objects.filter(status=2).order_by('-time')
     context_object_name = 'track_page_o'
