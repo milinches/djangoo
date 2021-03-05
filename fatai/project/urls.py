@@ -5,7 +5,6 @@ app_name = 'project'
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name="list"),
-    path('track-nil/', views.ListPageN.as_view(), name="list_page"),
-    path('track-del/', views.ListPageD.as_view(), name="list_del"),
-    path('<slug:slug>/', views.DetailPage.as_view(), name="detail"),
+    path('track/', views.ListPage.as_view(), name="list_page"),
+    path('track/<slug:slug>/', views.DetailPage.as_view(), name="detail"),
 ]

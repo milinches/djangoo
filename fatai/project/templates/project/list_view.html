@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="ul">
-        <h1>Track Page for NIL</h1>
         <ul>
             {% for track in track_page_n %}
-                <li><a href="{% url 'project:detail' track.slug %}">{{ track.tracking_number }}</a></li>
+                <li><a href="{% url 'project:detail' track %}">{{ track.tracking_number }}</a></li>
             {% endfor %}
         </ul>
-
-        
     </div>
 </body>
+
 </html>
