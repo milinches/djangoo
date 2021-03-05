@@ -26,6 +26,8 @@ class Track(models.Model):
     class Meta:
         ordering = ['-time']
 
+    def get_absolute_url(self):
+        return reverse('project:list_page', args=[str(self)])
 
     def __str__(self):
         return self.tracking_number
