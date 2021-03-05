@@ -10,7 +10,7 @@
     <h1>Track Page for On the way</h1>
         <ul>
             {% for track in track_page_o %}
-                <li><a href="#">{{ track.tracking_number }}</a></li>
+                <li><a href="{% url 'project:detail' track.slug %}">{{ track.tracking_number }}</a></li>
             {% endfor %}
         </ul>
 </body>

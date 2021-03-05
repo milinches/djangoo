@@ -8,4 +8,5 @@ urlpatterns = [
     path('track-nil/', views.ListPageN.as_view(), name="list_page"),
     path('track-del/', views.ListPageD.as_view(), name="list_del"),
     path('track-otw/', views.ListPageO.as_view(), name="list_otw"),
+    path('<slug:slug>/', views.DetailPage.as_view(), name="detail"),
 ]

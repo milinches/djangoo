@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Track a Shiftment</h1>
+        <p>{{ track_detail.tracking_number }}</p>
+        <p>on the way</p>
+        <p>{{ track_detail.date }} at {{ track_detail.time }}</p>
+        {% if track_detail.status == 0 %}
+            <p>NIL</p>
+        {% elif track_detail.status == 1 %}
+            <p>Delivered</p>
+        {% else %}
+            <p>On the way</p>
+        {% endif %}
+        <p>Signed for by {{ track_detail.signed_for_by }}</p>
+        <p>From</p>
+        <p>{{ track_detail.sender }}</p>
+        <p>{{ track_detail.receiver }}</p>
+</body>
+</html>

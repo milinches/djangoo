@@ -20,3 +20,8 @@ class ListPageO(generic.ListView):
     template_name = 'project/list_viewo.html'
     queryset = Track.objects.filter(status=2).order_by('-time')
     context_object_name = 'track_page_o'
+
+class DetailPage(generic.DetailView):
+    model = Track
+    context_object_name = 'track_detail'
+    template_name = 'project/list_detail.html'
