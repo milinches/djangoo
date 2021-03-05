@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# django admin username = admin
+# django admin password = fatai12345
 # Create your models here.
 
 STATUS = (
@@ -15,3 +17,13 @@ class Track(models.Model):
     signed_for_by = models.CharField(max_length=300)
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
+    location = models.CharField(max_length=100, blank=False)
+    destination = models.CharField(max_length=100, blank=False)
+    status = models.IntegerField(choices=STATUS, default=1)
+
+    class Meta:
+        ordering = ['-time']
+
+    def __str__(self):
+        return self.tracking_number
+    
