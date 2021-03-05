@@ -1,0 +1,7 @@
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'project/form-template.html' %}
+    <div class="button">
+        <button type="submit">Submit</button>
+    </div>
+</form>
