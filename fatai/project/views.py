@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.db.models import Q
+from django.urls import reverse_lazy
 from .models import Track
 
 # Create your views here.
@@ -12,7 +14,6 @@ class ListPage(generic.ListView):
     queryset = Track.objects.all().order_by('-time')
     context_object_name = 'track_page_n'
 
-
 class DetailPage(generic.DetailView):
     model = Track
     context_object_name = 'track_detail'
@@ -20,5 +21,14 @@ class DetailPage(generic.DetailView):
 
 class CreateTrack(CreateView):
     model = Track
-    fields = ['tracking_number', 'sender', 'receiver', 'signed_for_by', 'date', 'location', 'destination', 'status']
+    fields = ['tracking_number', 'slug', 'sender', 'receiver', 'signed_for_by', 'date', 'location', 'destination', 'status']
+
+class UpdateTrack(UpdateView):
+    model = Track
+    fields = ['tracking_number', 'slug', 'sender', 'receiver', 'signed_for_by', 'date', 'location', 'destination', 'status']
+
+class DeleteTrack(DeleteView):
+    model = Track
+    success_url = reverse_lazy('project:list')
+
 
