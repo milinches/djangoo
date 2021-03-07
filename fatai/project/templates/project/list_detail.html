@@ -15,8 +15,6 @@
             <p>NIL</p>
         {% elif track_detail.status == 1 %}
             <p>Delivered</p>
-        {% else %}
-            <p>On the way</p>
         {% endif %}
         <p>Signed for by {{ track_detail.signed_for_by }}</p>
         <p>From</p>
